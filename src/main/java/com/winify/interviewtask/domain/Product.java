@@ -10,7 +10,9 @@ import javax.persistence.*;
 @Entity(name = "products")
 public class Product implements Serializable {
 
-  @Id @GeneratedValue(strategy= GenerationType.IDENTITY) private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
   private String name;
 

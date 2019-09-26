@@ -10,9 +10,11 @@ import javax.persistence.Id;
 @Entity(name = "clients")
 public class User implements Serializable {
 
-  @Id @GeneratedValue(strategy= GenerationType.IDENTITY) private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-  private String username;
+  private String login;
 
   private String password;
 
@@ -26,12 +28,12 @@ public class User implements Serializable {
     this.id = id;
   }
 
-  public String getUsername() {
-    return username;
+  public String getLogin() {
+    return login;
   }
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setLogin(String login) {
+    this.login = login;
   }
 
   public String getPassword() {
@@ -56,7 +58,7 @@ public class User implements Serializable {
         + "id="
         + id
         + ", login='"
-        + username
+        + login
         + '\''
         + ", password='"
         + password

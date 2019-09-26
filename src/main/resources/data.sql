@@ -1,4 +1,4 @@
-insert into clients("USERNAME", "PASSWORD", "WALLET") values
+insert into clients("LOGIN", "PASSWORD", "WALLET") values
 ('user', 'user', 100000),
 ('user1', 'user1', 100000),
 ('user2', 'user2', 200000),
