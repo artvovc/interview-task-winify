@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.8.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id 'war'
+	id 'com.github.sherter.google-java-format' version '0.8'
+}
+
+apply from: 'dependencies/dependencies.gradle'
+apply from: 'version.gradle'
+
+group = 'com.winify'
+version = rootProject.ext.projectVersion
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation rootProject.ext.generalDependsOn.hibernate
+	implementation rootProject.ext.generalDependsOn.security
+	implementation rootProject.ext.generalDependsOn.thymleaf
+	implementation rootProject.ext.generalDependsOn.'spring-web'
+	runtimeOnly rootProject.ext.generalDependsOn.javaDB
+	providedRuntime rootProject.ext.generalDependsOn.tomcat
+	testImplementation rootProject.ext.generalDependsOn.'spring-test'
+	testImplementation rootProject.ext.generalDependsOn.'spring-security-test'
+}

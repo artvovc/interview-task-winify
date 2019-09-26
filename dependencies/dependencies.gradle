@@ -1,0 +1,12 @@
+ext {
+    generalDependsOn = [
+      hibernate: 'org.springframework.boot:spring-boot-starter-data-jpa',
+      security: 'org.springframework.boot:spring-boot-starter-security',
+      thymleaf: 'org.springframework.boot:spring-boot-starter-thymeleaf',
+      'spring-web': 'org.springframework.boot:spring-boot-starter-web',
+      javaDB: 'org.apache.derby:derby',
+      tomcat: 'org.springframework.boot:spring-boot-starter-tomcat',
+      'spring-test': 'org.springframework.boot:spring-boot-starter-test',
+      'spring-security-test': 'org.springframework.security:spring-security-test'
+    ]
+}
