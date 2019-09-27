@@ -2,13 +2,22 @@
 <html
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:th="https://www.thymeleaf.org"
-        xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head></head>
     <body>
         <h1>Welcome!</h1>
-        <div sec:authentication="name">
-            The value of the "name" property of the authentication object should appear here.
+        <div>
+            <span>User id:</span>
+            <span sec:authentication="principal.id">
+                The value of the "id" property of the authentication object should appear here.
+            </span>
+            <br>
+            <span>Username is:</span>
+            <span sec:authentication="principal.username">
+                The value of the "username" property of the authentication object should appear here.
+            </span>
         </div>
+
         <div>
             <h2>Product List</h2>
             <table >
@@ -32,3 +41,5 @@
         </div>
     </body>
 </html>
+
+<!--https://github.com/reljicd/spring-boot-shopping-cart/blob/master/src/main/resources/templates/shoppingCart.html-->

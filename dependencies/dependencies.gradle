@@ -3,6 +3,7 @@ ext {
       hibernate: 'org.springframework.boot:spring-boot-starter-data-jpa',
       security: 'org.springframework.boot:spring-boot-starter-security',
       thymleaf: 'org.springframework.boot:spring-boot-starter-thymeleaf',
+      'thymleaf-security': 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.0.4.RELEASE',
       'spring-web': 'org.springframework.boot:spring-boot-starter-web',
       javaDB: 'org.apache.derby:derby',
       tomcat: 'org.springframework.boot:spring-boot-starter-tomcat',

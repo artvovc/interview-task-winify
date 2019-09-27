@@ -21,6 +21,7 @@ dependencies {
 	implementation rootProject.ext.generalDependsOn.hibernate
 	implementation rootProject.ext.generalDependsOn.security
 	implementation rootProject.ext.generalDependsOn.thymleaf
+	implementation rootProject.ext.generalDependsOn.'thymleaf-security'
 	implementation rootProject.ext.generalDependsOn.'spring-web'
 	runtimeOnly rootProject.ext.generalDependsOn.javaDB
 	providedRuntime rootProject.ext.generalDependsOn.tomcat
