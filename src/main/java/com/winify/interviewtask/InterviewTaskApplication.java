@@ -7,11 +7,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@PropertySource({"classpath:hibernate-derby.properties"})
+@PropertySource({
+  "classpath:hibernate-derby-embedded.properties",
+  "classpath:active-mq-embedded.properties",
+})
 public class InterviewTaskApplication {
 
+  private static Logger logger = LoggerFactory.getLogger(InterviewTaskApplication.class);
+
   public static void main(String[] args) {
-    Logger logger = LoggerFactory.getLogger(InterviewTaskApplication.class);
+
     SpringApplication.run(InterviewTaskApplication.class, args);
     logger.info("App started");
   }

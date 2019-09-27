@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html
-        xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:th="https://www.thymeleaf.org"
-        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
     <head></head>
     <body>
         <h1>Welcome!</h1>
         <div>
-            User id: [[ ${#authentication.principal.id} ]]<br>Username is: [[ ${#authentication.principal.username} ]]<br>Balance: [[ ${#authentication.principal.wallet / 100.00} ]]
+            User id: [[ ${#authentication.principal.id} ]]<br>Username is: [[ ${#authentication.principal.username} ]]<br>Balance: [[ ${balance / 100.00} ]]
         </div>
 
         <div>
@@ -30,14 +27,12 @@
                     <td th:text="${#numbers.formatInteger(product.stock,1)}"></td>
                     <td th:text="${#dates.format(product.creationtime, 'dd/MMM/yyyy HH:mm')}"></td>
                     <td>
-                        <a th:href="@{'/{productId}'(productId=${product.id})}">
-                            <button type="button" th:text="Buy">Buy</button>
-                        </a>
+                        <form method="POST" th:action="@{'/{productId}'(productId=${product.id})}">
+                            <button type="submit" th:text="Buy"></button>
+                        </form>
                     </td>
                 </tr>
             </table>
         </div>
     </body>
 </html>
-
-<!--https://github.com/reljicd/spring-boot-shopping-cart/blob/master/src/main/resources/templates/shoppingCart.html-->

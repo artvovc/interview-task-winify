@@ -23,8 +23,12 @@ dependencies {
 	implementation rootProject.ext.generalDependsOn.thymleaf
 	implementation rootProject.ext.generalDependsOn.'thymleaf-security'
 	implementation rootProject.ext.generalDependsOn.'spring-web'
+	implementation rootProject.ext.generalDependsOn.'spring-active-mq'
+	implementation rootProject.ext.generalDependsOn.'active-mq'
+	implementation rootProject.ext.generalDependsOn.'jackson-databind'
 	runtimeOnly rootProject.ext.generalDependsOn.javaDB
 	providedRuntime rootProject.ext.generalDependsOn.tomcat
 	testImplementation rootProject.ext.generalDependsOn.'spring-test'
 	testImplementation rootProject.ext.generalDependsOn.'spring-security-test'
+
 }

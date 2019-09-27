@@ -8,6 +8,9 @@ ext {
       javaDB: 'org.apache.derby:derby',
       tomcat: 'org.springframework.boot:spring-boot-starter-tomcat',
       'spring-test': 'org.springframework.boot:spring-boot-starter-test',
-      'spring-security-test': 'org.springframework.security:spring-security-test'
+      'spring-security-test': 'org.springframework.security:spring-security-test',
+      'spring-active-mq': 'org.springframework.boot:spring-boot-starter-activemq',
+      'active-mq': 'org.apache.activemq:activemq-broker',
+      'jackson-databind': 'com.fasterxml.jackson.core:jackson-databind'
     ]
 }
