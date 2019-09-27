@@ -7,20 +7,12 @@
     <body>
         <h1>Welcome!</h1>
         <div>
-            <span>User id:</span>
-            <span sec:authentication="principal.id">
-                The value of the "id" property of the authentication object should appear here.
-            </span>
-            <br>
-            <span>Username is:</span>
-            <span sec:authentication="principal.username">
-                The value of the "username" property of the authentication object should appear here.
-            </span>
+            User id: [[ ${#authentication.principal.id} ]]<br>Username is: [[ ${#authentication.principal.username} ]]<br>Balance: [[ ${#authentication.principal.wallet / 100.00} ]]
         </div>
 
         <div>
             <h2>Product List</h2>
-            <table >
+            <table>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
@@ -28,6 +20,7 @@
                     <th>Price</th>
                     <th>Stock</th>
                     <th>Added Date</th>
+                    <th>Action</th>
                 </tr>
                 <tr th:each="product : ${products}">
                     <td th:text="${#numbers.formatInteger(product.id,1)}"></td>
@@ -36,6 +29,11 @@
                     <td th:text="${#numbers.formatDecimal(product.price / 100.00,1,'POINT',2,'COMMA')}"></td>
                     <td th:text="${#numbers.formatInteger(product.stock,1)}"></td>
                     <td th:text="${#dates.format(product.creationtime, 'dd/MMM/yyyy HH:mm')}"></td>
+                    <td>
+                        <a th:href="@{'/{productId}'(productId=${product.id})}">
+                            <button type="button" th:text="Buy">Buy</button>
+                        </a>
+                    </td>
                 </tr>
             </table>
         </div>
